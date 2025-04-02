@@ -7,7 +7,9 @@ export default function Page() {
     <>
       <NavBar />
       <div className="flex justify-items-start min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">View Journals</h1>
+        <h1 className="text-4xl font-bold mb-4 dark:text-gray-600">
+          View Journals
+        </h1>
       </div>
 
       <Footer />

@@ -14,7 +14,6 @@ export default function NavBar() {
         </div>
 
         <div className="flex items-center gap-x-4">
-          {" "}
           <a
             href="https://github.com/lelyu/tip-calculator"
             target="_blank"

@@ -8,15 +8,17 @@ export default function Home() {
     <>
       <NavBar />
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Daily Mood</h1>
-        <p className="text-lg mb-8">
+        <h1 className="text-4xl font-bold mb-4 dark:text-gray-600">
+          Welcome to Daily Mood
+        </h1>
+        <p className="text-lg mb-8 dark:text-gray-600">
           A simple and elegant mood tracker application.
         </p>
         <div className="flex space-x-4">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded">
+          <button className="bg-blue-500 dark:bg-blue-200 text-white px-4 py-2 rounded dark:text-blue-700">
             Get Started
           </button>
-          <button className="bg-gray-300 text-gray-800 px-4 py-2 rounded">
+          <button className="bg-gray-300 text-gray-800 px-4 py-2 rounded dark:text-gray-600">
             Learn More
           </button>
         </div>
