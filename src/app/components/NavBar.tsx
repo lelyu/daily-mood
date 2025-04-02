@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -6,24 +7,24 @@ export default function NavBar() {
       <nav className="bg-gray-800 p-4 flex justify-between items-center">
         <div className="text-white text-lg font-bold">Daily Mood</div>
         <div className="flex space-x-4">
-          <a href="#" className="text-gray-300 hover:text-white">
+          <Link href="/" className="text-gray-300 hover:text-white">
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="vis"
             className="hidden md:block text-gray-300 hover:text-white"
           >
             Visualization
-          </a>
-          <a href="#" className="text-gray-300 hover:text-white">
+          </Link>
+          <Link href="/view" className="text-gray-300 hover:text-white">
             View Journal
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="create"
             className="hidden md:block text-gray-300 hover:text-white"
           >
             Create Journal
-          </a>
+          </Link>
         </div>
         <div className="text-white text-md">Login</div>
       </nav>
