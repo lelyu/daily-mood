@@ -1,71 +1,83 @@
 [
     {
+      "id": 1,
       "date": "2025-04-01",
       "mood": "happy",
       "note": "Finished the main feature for the tip calculator app. Felt productive.",
       "intensity": 8
     },
     {
+      "id": 2,
       "date": "2025-03-31",
       "mood": "neutral",
       "note": "Regular Monday. Worked on some refactoring and attended meetings.",
       "intensity": 5
     },
     {
+      "id": 3,      
       "date": "2025-03-30",
       "mood": "very_happy",
       "note": "Weekend outing with friends, lots of fun and relaxation.",
       "intensity": 9
     },
     {
+      "id": 4,
       "date": "2025-03-29",
       "mood": "neutral",
       "note": "Quiet Saturday. Did some chores and watched a movie.",
       "intensity": 4
     },
     {
+      "id": 5,
       "date": "2025-03-28",
       "mood": "unhappy",
       "note": "Hit a roadblock with a bug, felt frustrating.",
       "intensity": 6
     },
     {
+      "id": 6,
       "date": "2025-03-27",
       "mood": "happy",
       "note": "Received positive feedback on a design mockup.",
       "intensity": 7
     },
     {
+      "id": 7,
       "date": "2025-03-26",
       "mood": "very_unhappy",
       "note": "Deadline pressure is high. Feeling stressed and overwhelmed.",
       "intensity": 9
     },
     {
+      "id": 8,
       "date": "2025-03-25",
       "mood": "neutral",
       "note": "",
       "intensity": 3
     },
     {
+      "id": 9,
       "date": "2025-03-24",
       "mood": "happy",
       "note": "Productive brainstorming session with the team.",
       "intensity": 7
     },
     {
+      "id": 10,
       "date": "2025-03-23",
       "mood": "very_happy",
       "note": "Celebrated a small personal milestone!",
       "intensity": 10
     },
     {
+      "id": 11,
       "date": "2025-03-22",
       "mood": "unhappy",
       "note": "Didn't sleep well, feeling tired and groggy all day.",
       "intensity": 5
     },
     {
+      "id": 12,
       "date": "2025-03-21",
       "mood": "neutral",
       "note": "Planning for the upcoming week.",
