@@ -7,11 +7,11 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4 dark:text-gray-600">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+        <h1 className="text-4xl font-bold mb-4 dark:text-gray-600 text-center">
           Welcome to Daily Mood
         </h1>
-        <p className="text-lg mb-8 dark:text-gray-600">
+        <p className="text-lg mb-8 dark:text-gray-600 text-center">
           A simple and elegant mood tracker application.
         </p>
         <div className="flex space-x-4">

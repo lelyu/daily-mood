@@ -7,21 +7,21 @@ export default function Page() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col justify-items-start min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4 dark:text-gray-600">
+      <div className="flex flex-col justify-items-start min-h-screen bg-gray-100 p-4">
+        <h1 className="w-fit text-4xl font-bold mb-4 dark:text-gray-600 border rounded-md p-2">
           View Journals
         </h1>
         <Link
           href="/vis"
-          className="block md:hidden text-lg font-bold mb-4 dark:text-gray-600"
+          className="w-fit md:hidden text-lg font-bold mb-4 dark:text-gray-600 border p-2"
         >
-          View Visualization
+          View Visualizations
         </Link>
         <Link
           href="/create"
-          className="block md:hidden text-lg font-bold mb-4 dark:text-gray-600"
+          className="w-fit md:hidden text-lg font-bold mb-4 dark:text-gray-600 border p-2"
         >
-          Add Mood
+          Create Journals
         </Link>
 
         <div className="flex flex-col md:flex-row justify-center bg-gray-100 flex-wrap gap-2">
