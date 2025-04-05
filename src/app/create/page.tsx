@@ -24,12 +24,13 @@ export default function Page() {
               Mood:
             </label>
             <select
+              defaultValue=""
               name="mood"
               id="mood"
               required
               className="dark:text-amber-700 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 -- Please select a mood --
               </option>
               <option value="very-happy">Very Happy</option>
@@ -48,12 +49,13 @@ export default function Page() {
               Intensity (1=Low, 10=High):
             </label>
             <select
+              defaultValue=""
               name="intensity"
               id="intensity"
               required
               className="dark:text-amber-700 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 -- Select intensity --
               </option>
               <option value="1">1</option>

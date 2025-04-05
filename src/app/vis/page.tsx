@@ -1,5 +1,8 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import PieChart from "../components/PieChart";
+import moodData from "../../../lib/mockData.json";
+
 export default function Page() {
   return (
     <>
@@ -8,7 +11,7 @@ export default function Page() {
         <h1 className="w-fit text-4xl font-bold mb-4 dark:text-gray-600 border rounded-md p-2">
           Visualizations
         </h1>
-        <form action=""></form>
+        <PieChart data={moodData} />
       </div>
       <Footer />
     </>

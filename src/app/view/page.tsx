@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
-import moodData from "../../../lib/mockData.json"; // Adjust the path as needed
+import moodData from "../../../lib/mockData.json";
 
 export default function Page() {
   return (
