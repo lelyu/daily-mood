@@ -1,10 +1,8 @@
-// src/components/PieChart.tsx (or similar path)
-"use client"; // Needed for useRef, useState, useEffect
+"use client";
 
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import * as d3 from "d3";
 
-// Interfaces remain the same
 interface AggregatedMoodData {
   mood: string;
   count: number;
@@ -21,18 +19,14 @@ interface MoodEntry {
 interface PieChartProps {
   data: MoodEntry[];
   innerRadiusRatio?: number;
-  // No width/height props needed by default anymore
-  // Optional: Could add minWidth/minHeight props if desired
 }
 
 export default function PieChart({
   data,
   innerRadiusRatio = 0,
 }: PieChartProps) {
-  // Ref for the container div we'll measure
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // State to store the measured dimensions
   const [dimensions, setDimensions] = useState<{
     width: number;
     height: number;
@@ -41,12 +35,10 @@ export default function PieChart({
     height: 0,
   });
 
-  // --- 1. Measure Container Size ---
   useEffect(() => {
     const element = containerRef.current;
     if (!element) return;
 
-    // Set initial dimensions
     setDimensions({ width: element.clientWidth, height: element.clientHeight });
 
     // Use ResizeObserver to detect size changes
@@ -60,11 +52,9 @@ export default function PieChart({
 
     resizeObserver.observe(element);
 
-    // Cleanup observer on component unmount
     return () => resizeObserver.disconnect();
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
-  // --- 2. Data Aggregation (same as before) ---
   const aggregatedData: AggregatedMoodData[] = useMemo(() => {
     if (!data) return [];
     const moodCounts = d3.rollup(
@@ -75,17 +65,14 @@ export default function PieChart({
     return Array.from(moodCounts, ([mood, count]) => ({ mood, count }));
   }, [data]);
 
-  // --- 3. D3 Setup (Calculations based on measured dimensions) ---
   const { color, arc, labelArc, arcsData } = useMemo(() => {
-    // Use measured dimensions from state
     const { width, height } = dimensions;
 
-    // Handle initial render or zero dimensions
     if (width === 0 || height === 0) {
       return { color: null, arc: null, labelArc: null, arcsData: [] };
     }
 
-    const currentHeight = Math.min(width, height); // Maintain aspect ratio somewhat
+    const currentHeight = Math.min(width, height);
     const outerRadius = Math.min(width, currentHeight) / 2 - 1;
     const currentInnerRadius =
       outerRadius * Math.max(0, Math.min(1, innerRadiusRatio));
@@ -121,9 +108,8 @@ export default function PieChart({
     const arcsData = pie(aggregatedData);
 
     return { color, arc, labelArc, arcsData };
-  }, [aggregatedData, dimensions, innerRadiusRatio]); // Recalculate when dimensions change
+  }, [aggregatedData, dimensions, innerRadiusRatio]);
 
-  // --- 4. JSX Rendering ---
   if (!aggregatedData || aggregatedData.length === 0) {
     return (
       <div ref={containerRef} className="w-full h-64 text-center p-4">
@@ -132,13 +118,10 @@ export default function PieChart({
     );
   }
 
-  // Use the containerRef on the wrapper div with Tailwind classes
   return (
     <div
       ref={containerRef}
-      // --- Tailwind classes define the size ---
-      // Example: Full width on small screens, fixed 600px on md+, specific height
-      className="text-sm w-full h-[400px] md:w-[600px] md:h-[500px] mx-auto" // Added mx-auto for centering if width is fixed
+      className="text-sm w-full h-[400px] md:w-[600px] md:h-[500px] mx-auto"
     >
       {/* Render SVG only when dimensions are known and valid */}
       {dimensions.width > 0 &&
@@ -159,7 +142,7 @@ export default function PieChart({
               {arcsData.map((arcItem, index) => (
                 <path
                   key={arcItem.data.mood || index}
-                  d={arc(arcItem) || ""} // Use calculated arc generator
+                  d={arc(arcItem) || ""}
                   fill={color(arcItem.data.mood)}
                 >
                   <title>{`${arcItem.data.mood}: ${arcItem.data.count}`}</title>
