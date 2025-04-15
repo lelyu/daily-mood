@@ -91,9 +91,22 @@ export default function PieChart({ mockData }) {
       .attr("d", arcGenerator)
       .attr("fill", (d) => color(d.data.mood))
       .attr("stroke", "white")
-      .attr("stroke-width", 1.5)
-      .append("title")
-      .text((d) => `${d.data.mood}: ${d.data.count}`);
+      .attr("stroke-width", 1.5);
+
+    svgGroup
+      .selectAll("text")
+      .data(arcData)
+      .join("text")
+      .each(function (d) {
+        let centroid = arcGenerator.centroid(d);
+        d3.select(this)
+          .attr("x", centroid[0])
+          .attr("y", centroid[1])
+          .attr("dy", "0em")
+          .attr("dx", "-3em")
+          .attr("font-size", "1em")
+          .text(d.data.mood + ": " + d.data.count);
+      });
   }, [arcData, arcGenerator, color]);
 
   const transform =
